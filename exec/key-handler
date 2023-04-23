@@ -7,5 +7,9 @@ do
 			new_name=$(echo $RANDOM | md5sum | head -c 20;echo)
 			cp $file $HOME/Pictures/$new_name
 		;;
+		"w")
+			cp $file $HOME/Pictures/wallPaper
+			feh --bg-scale $HOME/Pictures/wallPaper
+		;;
 	esac
 done
