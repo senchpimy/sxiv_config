@@ -1,0 +1,11 @@
+#!/bin/sh
+while read file
+do 
+	fullpath="$(pwd)/$file"
+	case "$1" in
+		"s")
+			new_name=$(echo $RANDOM | md5sum | head -c 20;echo)
+			cp $file $HOME/Pictures/$new_name
+		;;
+	esac
+done
